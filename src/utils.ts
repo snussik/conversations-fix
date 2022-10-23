@@ -10,9 +10,12 @@ export function ident<T>(arg: T) {
 export function clone<T>(arg: T) {
     // TODO: replace ugly hack with better cloning
     if (arg === undefined) return undefined;
-    const string = JSON.stringify(arg);
-    if (!string) return undefined;
-    return JSON.parse(string);
+    try {
+        const string = JSON.stringify(arg);
+        if (!string) return undefined;
+        return JSON.parse(string);
+    } catch (e) { }
+
 }
 
 // Define which context properties are intrinsic to grammY or this plugin and
