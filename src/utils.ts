@@ -1,3 +1,5 @@
+import * as oson from "o-son";
+
 /** Identity function */
 export function ident<T>(arg: T) {
     return arg;
@@ -10,11 +12,10 @@ export function ident<T>(arg: T) {
 export function clone<T>(arg: T) {
     // TODO: replace ugly hack with better cloning
     if (arg === undefined) return undefined;
-    try {
-        const string = JSON.stringify(arg);
-        if (!string) return undefined;
-        return JSON.parse(string);
-    } catch (e) { }
+    const string = oson.stringify(arg);
+    if (!string) return undefined;
+    return JSON.parse(string);
+
 
 }
 
