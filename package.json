@@ -19,6 +19,7 @@
     "dependencies": {
         "@grammyjs/types": "^2.8.2",
         "debug": "^4.3.4",
+        "lodash": "^4.17.21",
         "o-son": "^0.3.1"
     },
     "peerDependencies": {
@@ -26,6 +27,7 @@
     },
     "devDependencies": {
         "@types/debug": "^4.1.7",
+        "@types/lodash": "^4.14.186",
         "@types/node": "^12.20.55",
         "deno2node": "^1.4.0"
     },
