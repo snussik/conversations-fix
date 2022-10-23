@@ -14,7 +14,7 @@ export function clone<T>(arg: T) {
     if (arg === undefined) return undefined;
     const string = oson.stringify(arg);
     if (!string) return undefined;
-    return JSON.parse(string);
+    return oson.parse(string);
 
 
 }
